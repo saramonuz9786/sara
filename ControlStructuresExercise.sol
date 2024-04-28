@@ -32,3 +32,15 @@ contract ControlStructures {
         }
     }
 }
+contract ControlStructures {
+    error AfterHours(uint256 _time);
+    string private salt = "gn"; 
+    
+    function sumOfEvenNumbers(uint[] memory numbers) public pure returns (uint sum) {
+        for (uint i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                sum += numbers[i];
+            }
+        }
+        return sum;
+    }

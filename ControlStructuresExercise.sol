@@ -1,8 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
+
 contract ControlStructures {
     error AfterHours(uint256 _time);
-    string private salt = "gn"; 
+    string private salt = "gn";
+
     // Smart Contract FizzBuzz
     function fizzBuzz(uint256 _number) public pure returns (string memory) {
         if (_number % 3 == 0 && _number % 5 == 0) {
@@ -15,10 +17,11 @@ contract ControlStructures {
             return "Splat";
         }
     }
+
     // Do Not Disturb
     function doNotDisturb(uint256 _time) public pure returns (string memory) {
         if (_time >= 2400) {
-            revert("1");
+            revert("After midnight");
         } else if (_time >= 2200 || _time < 800) {
             revert AfterHours(_time);
         } else if (_time >= 1200 && _time <= 1259) {
@@ -31,16 +34,14 @@ contract ControlStructures {
             return "Evening!";
         }
     }
-}
-contract ControlStructures {
-    error AfterHours(uint256 _time);
-    string private salt = "gn"; 
-    
-    function sumOfEvenNumbers(uint[] memory numbers) public pure returns (uint sum) {
-        for (uint i = 0; i < numbers.length; i++) {
+
+    // Sum of Even Numbers
+    function sumOfEvenNumbers(uint256[] memory numbers) public pure returns (uint sum) {
+        for (uint256 i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) {
                 sum += numbers[i];
             }
         }
         return sum;
     }
+}

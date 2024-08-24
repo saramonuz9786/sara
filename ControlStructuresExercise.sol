@@ -30,6 +30,8 @@ contract ControlStructures {
             return "Morning!";
         } else if (_time >= 1300 && _time <= 1799) {
             return "Afternoon!";
+else if (_time >= 1300 && _time <= 1799) {
+            return "Afternoon!";
         } else {
             return "Evening!";
         }
